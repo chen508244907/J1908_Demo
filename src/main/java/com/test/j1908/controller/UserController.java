@@ -36,6 +36,7 @@ public class UserController {
 
     @RequestMapping(value = "/deleteById/{uid}",method = RequestMethod.POST)
     public String deleteById(@PathVariable("uid") int id){
+        logger.info (id);
         Boolean deleteUser = userService.deleteById ( id );
         if(deleteUser){
             return "success";
